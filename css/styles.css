@@ -1,0 +1,217 @@
+/* CSS RESET */
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    html {
+        font-size: 100%;
+        scroll-behavior: smooth;
+    }
+    body {
+        min-height: 100vh;
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased; /* Improves font rendering on macOS */
+    }
+    img,
+    picture {
+        max-width: 100%;
+        display: block;
+    }
+    input,
+    button,
+    textarea,
+    select {
+        font: inherit;
+}
+
+
+/* CSS VARIABLES */
+:root {
+    /* Colors */
+    --color-primary:  #9E79A6;  /* Lavender */
+    --color-secondary: #191919;  /* Carbon Black */
+    --color-base: #FFFFFF;  /* White */
+    --color-detail: #E6E8E6;  /* Alabaster Grey */
+
+    /* Fonts */
+    --font-heading: 'kadwa', serif;
+    --font-body: 'kaisei-opti', sans-serif;
+    --font-accent: 'monte-carlo', serif;
+
+    /* Font sizes */
+    --text-body: 14px; /* paragraphs */
+    --text-link: 16px; /**/
+    --text-h3: 20px;  /* card-headings */
+    --text-h2: 48px;  /* subheadings */
+    --text-lg: 64px;  /* tablet */
+    --text-h1: 90px;  /* headings */
+    --text-xl: 128px;  /* desktop */
+    --text-xxl: 90px;  /**/
+
+    /* Spacing */
+    --padding-xs: 8px;  /**/
+    --padding-sm: 16px;  /**/
+    --padding-md: 24px;  /**/
+    --padding-lg: 32px;  /**/
+    --padding-xl: 40px;  /**/
+    --padding-xxl: 80px;  /**/
+    --padding-desk: 160px;  /**/
+
+    /* UI */
+    --radius-circle: 90px;  /**/
+
+    --transition-base: 0.3s ease;  /* Opening */
+    --transition-fast: 0.2s ease;  /* Closing */
+}
+
+@font-face {
+  font-family: "kadwa";
+  src: url("../assets/fonts/kadwa/Kadwa-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "kaisei-opti";
+  src: url("../assets/fonts/kaisei-opti/KaiseiOpti-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "monte-carlo";
+  src: url("../assets/fonts/monte-carlo/MonteCarlo-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* TYPOGRAPHY */
+h1 {
+    font-family: var(--font-accent);
+    font-size: var(--text-h1);
+}
+h2,
+header h2 {
+    font-size: var(--text-h2);
+}
+h2,
+h3,
+button {
+    font-family: var(--font-heading);
+}
+h3 {
+    font-size: var(--text-h3);
+}
+p,
+a {
+    font-size: var(--text-body);
+}
+p,
+header h2,
+footer h2 {
+    font-family: var(--font-body);
+}
+footer h2 {
+    font-size: var(--text-h2);
+}
+a {
+    text-decoration: none;
+}
+
+/* BASE LAYOUT */
+    body {
+        background-color: var(--color-primary);
+        color: var(--color-base);
+        padding: var(--padding-xl) var(--padding-md);
+    }
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    header,
+    section, 
+    footer {
+        gap: var(--padding-sm);
+        padding: var(--padding-xxl) 0;
+    }
+    .hero-section,
+    .presentation,
+    .projects,
+    .information {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .presentation h2 {
+        margin-left: 0;
+        margin-right: auto;
+    }
+    .projects h2 {
+        margin-left: auto;
+        margin-right: 0;
+    }
+    .display {
+        display: flex;
+        flex-direction: column;
+}
+
+/* CARDS */
+    .polaroid,
+    .card {
+        background: var(--color-base);
+        color: var(--color-secondary);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: var(--padding-md) var(--padding-md) var(--padding-lg) var(--padding-md);
+        gap: var(--padding-sm);
+    }
+    .polaroid {
+        padding-bottom: var(--padding-xxl);
+    }
+    .links {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .display {
+        gap: var(--padding-md);
+}
+
+/* BUTTONS */
+    button {
+        border: solid 3px var(--color-primary);
+        border-radius: var(--radius-circle);
+        background-color: var(--color-base);
+        color: var(--color-primary);
+        padding: var(--padding-xs) var(--padding-sm);
+        cursor: pointer;
+    }
+    button:hover {
+        color: var(--color-detail)
+    }
+    button:active {
+        transform: translateY(1px) scale(0.98);
+        box-shadow: 
+            0 2px 6px rgba(0, 0, 0, 0.15),
+            inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+    .btn {
+        color: var(--color-base);
+        font-size: var(--text-btn);
+        border: solid 1px var(--color-secondary);
+        box-shadow: 2px 3px 4px  rgba(67, 67, 67, 0.3),
+                    inset 0 -2px 4px rgba(67, 67, 67, 0.3);
+        padding: var(--padding-xs) var(--padding-md);
+}
