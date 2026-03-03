@@ -215,3 +215,54 @@ a {
                     inset 0 -2px 4px rgba(67, 67, 67, 0.3);
         padding: var(--padding-xs) var(--padding-md);
 }
+
+
+
+/* TABLET */
+@media (min-width: 768px) {
+    h2,
+    header h2,
+    footer h2 {
+        font-size: var(--text-lg);
+    }
+    .display {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+        .presentation {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows:  auto auto;
+    }
+}
+
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 208px;
+    }
+    h2,
+    header h2,
+    footer h2 {
+        font-size: var(--text-xl);
+    }
+    header h3 {
+        font-size: var(--text-h2);
+    }
+    p,
+    a {
+        font-size: var(--text-link);
+    }
+    body {
+        padding:  var(--padding-lg) var(--padding-lg) var(--padding-xxl) var(--padding-lg);
+    }
+    .card {
+        padding: var(--padding-md) var(--padding-md) var(--padding-lg) var(--padding-md);
+        gap: var(--padding-md);
+    }
+    .display {
+        gap: var(--padding-lg);
+    }
+}
